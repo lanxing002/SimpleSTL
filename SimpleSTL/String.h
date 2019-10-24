@@ -98,7 +98,7 @@ namespace SimpleSTL {
 		iterator insert(iterator p, InputIterator first, InputIterator last);
 
 		string& append(const string& str);
-		string& append(const string& str, size_t subpos, size_t sublen);
+		string& append(const string& str, size_t subpos, size_t sublen = npos);
 		string& append(const char* s);
 		string& append(const char* s, size_t n);
 		string& append(size_t n, char c);
@@ -110,18 +110,19 @@ namespace SimpleSTL {
 		string& operator+= (char c);
 
 		void pop_back() { erase(_finish - 1, _finish); _finish--; } // TODO 自己加了递减操作符
-		string& erase(iterator p);
-		string& erase(iterator first, iterator last);
+		string& erase(size_t pos, size_t len = npos);
+		iterator erase(iterator p);
+		iterator erase(iterator first, iterator last);
 
 		string& replace(size_t pos, size_t len, const string& str);
 		string& replace(iterator i1, iterator i2, const string& str);
 		string& replace(size_t pos, size_t len, const string& str, size_t subpos, size_t sublen = npos); //尽量复制最大的长度
-		string& replace(size_t pos, size_t len, const char* c);
-		string& replace(iterator i1, iterator i2, const char* c);
+		string& replace(size_t pos, size_t len, const char* s);
+		string& replace(iterator i1, iterator i2, const char* s);
+		string& replace(iterator i1, iterator i2, const char* s, size_t n);
 		string& replace(size_t pos, size_t len, const char* s, size_t n);
-		string& repalce(iterator i1, iterator i2, const char* s, size_t n);
-		string& replace(size_t pos, size_t len, size_t n, char c);
 		string& replace(iterator i1, iterator i2, size_t n, char c);
+		string& replace(size_t pos, size_t len, size_t n, char c);
 		template<class InputIterator>
 		string& replace(iterator i1, iterator i2, InputIterator first, InputIterator last);
 
@@ -187,7 +188,7 @@ namespace SimpleSTL {
 		template<class InputIterator>
 		void string_aux(InputIterator first, InputIterator last, std::false_type);
 		void destroyAndDeallocate();
-		size_t rfind_aux(const_iterator cit, size_t pos, size_t lengthOfS, int cond)const;
+		size_t rfind_aux(const_iterator cit, size_t pos, size_t lengthOfS, size_t cond)const;
 		size_t find_aux(const_iterator cit, size_t pos, size_t lengthOfS, size_t cond)const;
 		int compare_aux(size_t pos, size_t len, const_iterator cit, size_t subpos, size_t sublen)const;
 		bool isContained(char ch, const_iterator first, const_iterator last)const;
@@ -237,6 +238,7 @@ namespace SimpleSTL {
 		auto newCapacity = getNewCapacity(lengthOfInsert);
 		iterator newStart = dataAllocator::allocate(newCapacity);
 		iterator newFinish = SimpleSTL::uninitialized_copy(_start, p, newStart);
+		newFinish = SimpleSTL::uninitialized_copy(first, last, newFinish);
 		auto res = newFinish;
 		newFinish = SimpleSTL::uninitialized_copy(p, _finish, newFinish);
 
@@ -255,8 +257,10 @@ namespace SimpleSTL {
 			else
 				
 		*/
+		auto capac = capacity();
+		auto si = size();
 		auto lengthOfLeft = capacity() - size();
-		size_t lengthOfInsert = distance(last, first);
+		size_t lengthOfInsert = distance(first, last);
 		if (lengthOfInsert > lengthOfLeft) {
 			//空间不够
 			return insert_aux_copy(p, first, last);
@@ -277,8 +281,10 @@ namespace SimpleSTL {
 		return *this;
 	}
 	template<class InputIterator>
-	string& string::replace(iterator i1, iterator i2, InputIterator first, InputIterator last) {
+	string& string::replace(iterator i1, iterator i2, 
+		InputIterator first, InputIterator last) {
 		//如果两个长度不一样呢，应该在哪里保证长度
+		//first delete data and insert data
 		auto ptr = erase(i1, i2);
 		insert(ptr, first, last);
 		return *this;

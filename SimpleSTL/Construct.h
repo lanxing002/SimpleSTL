@@ -34,4 +34,9 @@ namespace SimpleSTL {
   1.delete 和 析构函数对于 new 出来的对象效果一样吗
   2.new(varibaries) 语法怎么来的
   3. _true_type and _false_type 各自代表什么
+  4. SimpleTest::Test::equal_container 之中传递 临时对象 编译出错
+  5. find_aux 的算法时间复杂度太高了，能不能用更加高效的算法替代
+  6.rfind_aux代码太脏了，有什么简洁的代码没有？？
+  7. 在 rfind 之中体会到了反向指针的作用，反向指针需要一个正向指针逻辑上一致的功能。
+
 */
