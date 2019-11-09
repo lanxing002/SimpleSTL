@@ -8,7 +8,7 @@
 
 namespace SimpleSTL {
 	template<class T1, class T2>
-	inline void consttruct(T1* ptr1, const T2& value) {
+	inline void construct(T1* ptr1, const T2& value) {
 		new(ptr1) T1(value);
 		//ptr1 = new T1(value);
 	}

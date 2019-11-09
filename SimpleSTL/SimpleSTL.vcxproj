@@ -127,21 +127,25 @@
     <ClInclude Include="Alloc.h" />
     <ClInclude Include="Allocator.h" />
     <ClInclude Include="Construct.h" />
+    <ClInclude Include="detail\vector.imp.h" />
     <ClInclude Include="Functional.h" />
     <ClInclude Include="Iterator.h" />
     <ClInclude Include="ReverseIterator.h" />
     <ClInclude Include="String.h" />
     <ClInclude Include="Test\StringTest.h" />
     <ClInclude Include="Test\TestUtil.h" />
+    <ClInclude Include="Test\VectorTest.h" />
     <ClInclude Include="TypeTraits.h" />
     <ClInclude Include="UninitializedFunctions.h" />
     <ClInclude Include="Utility.h" />
+    <ClInclude Include="vector.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Alloc.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Stirng.cpp" />
     <ClCompile Include="Test\StringTest.cpp" />
+    <ClCompile Include="Test\VectorTest.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

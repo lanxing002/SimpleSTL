@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="test">
+      <UniqueIdentifier>{a346a7e8-c6e3-4534-ae29-5cdd5ba2d01a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="detail">
+      <UniqueIdentifier>{2a69de12-8d5d-4fec-bd9b-eb47fd8ac2d6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Alloc.cpp">
@@ -21,11 +27,14 @@
     <ClCompile Include="Stirng.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Test\StringTest.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Test\VectorTest.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="Test\StringTest.cpp">
+      <Filter>test</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -53,12 +62,6 @@
     <ClInclude Include="String.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Test\StringTest.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Test\TestUtil.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="TypeTraits.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -67,6 +70,21 @@
     </ClInclude>
     <ClInclude Include="Utility.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Test\StringTest.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="Test\TestUtil.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="vector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Test\VectorTest.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="detail\vector.imp.h">
+      <Filter>detail</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

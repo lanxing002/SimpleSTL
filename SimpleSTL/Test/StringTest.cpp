@@ -591,25 +591,25 @@ namespace SimpleSTL {
 			testCase8();
 			testCase9();
 			testCase10();
-			//testCase11();
-			//testCase12();
-			//testCase13();
-			//testCase14();
-			//testCase15();
-			//testCase16();
-			//testCase17();
-			//testCase18();
-			//testCase19();
-			//testCase20();
-			//testCase21();
-			//testCase22();
-			//testCase23();
-			//testCase24();
-			//testCase25();
-			//testCase26();
-			//testCase27();
-			//testCase28();
-			//testCase29();
+			testCase11();
+			testCase12();
+			testCase13();
+			testCase14();
+			testCase15();
+			testCase16();
+			testCase17();
+			testCase18();
+			testCase19();
+			testCase20();
+			testCase21();
+			testCase22();
+			testCase23();
+			testCase24();
+			testCase25();
+			testCase26();
+			testCase27();
+			testCase28();
+			testCase29();
 		}
 	}
 }

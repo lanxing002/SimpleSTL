@@ -109,7 +109,7 @@ namespace SimpleSTL {
 		string& operator+= (const char* s);
 		string& operator+= (char c);
 
-		void pop_back() { erase(_finish - 1, _finish); _finish--; } // TODO 自己加了递减操作符
+		void pop_back() { erase(_finish - 1, _finish); } // TODO 自己加了递减操作符
 		string& erase(size_t pos, size_t len = npos);
 		iterator erase(iterator p);
 		iterator erase(iterator first, iterator last);
